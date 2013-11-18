@@ -7,3 +7,6 @@
 [submodule "content/themes/alienship"]
 	path = content/themes/alienship
 	url = https://github.com/coreyp/alienship.git
+[submodule "content/plugins/participad"]
+	path = content/plugins/participad
+	url = https://github.com/coreyp/participad.git
