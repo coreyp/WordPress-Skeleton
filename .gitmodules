@@ -10,3 +10,6 @@
 [submodule "content/plugins/participad"]
 	path = content/plugins/participad
 	url = https://github.com/coreyp/participad.git
+[submodule "content/plugins/stripe-donations"]
+	path = content/plugins/stripe-donations
+	url = https://github.com/coreyp/stripe-donations.git
