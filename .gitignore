@@ -4,3 +4,5 @@
 /db-sync
 /content/upgrade/
 .DS_Store
+# my mods
+/wp-config.php

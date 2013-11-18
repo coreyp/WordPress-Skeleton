@@ -1,3 +1,9 @@
 [submodule "wp"]
 	path = wp
 	url = https://github.com/coreyp/WordPress.git
+[submodule "content/themes/P2-Categories"]
+	path = content/themes/P2-Categories
+	url = https://github.com/coreyp/P2-Categories.git
+[submodule "content/themes/alienship"]
+	path = content/themes/alienship
+	url = https://github.com/coreyp/alienship.git
