@@ -1,6 +1,21 @@
 <?php
 
-/*
+// get name of current template file
+
+add_filter( 'template_include', 'var_template_include', 1000 );
+function var_template_include( $t ){
+    $GLOBALS['current_theme_template'] = basename($t);
+    return $t;
+}
+
+function get_current_template( $echo = false ) {
+    if( !isset( $GLOBALS['current_theme_template'] ) )
+        return false;
+    if( $echo )
+        echo $GLOBALS['current_theme_template'];
+    else
+        return $GLOBALS['current_theme_template'];
+} 
 
 // deregister styles for new registry request page, per http://www.advancedcustomfields.com/resources/tutorials/creating-a-front-end-form/
 
@@ -27,8 +42,9 @@ function my_pre_save_post( $post_id )
     $post = array(
         'post_status' => 'draft',
         'post_title' => 'New Request',
-        'post_type' => 'requests',
-        'post_content' => '<p>Estimated cost: <strong>$[acf field="est_cost"] </strong></p><p>Estimated time commitment: <strong>[acf field="est_time"] hour(s) </strong></p><p>[acf field="request_description"]</p><p><a href="#" class="stripe-connect light-blue"><span>Volunteer</span></a> [ssd amount="3500"]</p>'
+        'post_type' => 'request',
+        // 'post_type' => 'post',
+        'post_content' => '[label type="default"]Est. cost: $[acf field="est_cost"][/label] [label type="default"]Est. time commitment: [acf field="est_time"] hour(s)[/label]<p>[well] [acf field="request_description"] [/well] </p><p><a href="#" class="stripe-connect light-blue"><span>Volunteer</span></a> [ssd amount="500"]</p>'
     );  
  
     // insert the post
@@ -42,7 +58,7 @@ function my_pre_save_post( $post_id )
 
 }
 
-add_filter('acf/pre_save_post' , 'my_pre_save_post' ); */
+add_filter('acf/pre_save_post' , 'my_pre_save_post' );
 
 // remove rich post editor 
 add_filter('user_can_richedit' , create_function('' , 'return false;') , 50); 
