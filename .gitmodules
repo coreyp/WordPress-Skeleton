@@ -13,3 +13,6 @@
 [submodule "content/plugins/stripe-donations"]
 	path = content/plugins/stripe-donations
 	url = https://github.com/coreyp/stripe-donations.git
+[submodule "content/plugins/alienship-shortcodes"]
+	path = content/plugins/alienship-shortcodes
+	url = https://github.com/mindctrl/alienship-shortcodes.git
