@@ -1,5 +1,26 @@
 <?php
 
+// include CPTs in search, per http://www.paulund.co.uk/include-all-custom-post-types-in-wordpress-search
+
+function include_post_types_in_search($query) {
+    if(is_search()) {
+        $post_types = get_post_types(array('public' => true, 'exclude_from_search' => false), 'objects');
+        $searchable_types = array();
+        if($post_types) {
+            foreach( $post_types as $type) {
+                $searchable_types[] = $type->name;
+            }
+        }
+        $query->set('post_type', $searchable_types);
+    }
+    return $query;
+}
+add_action('pre_get_posts', 'include_post_types_in_search');
+
+// advanced search library
+
+// require_once('wp-advanced-search/wpas.php');
+
 // get name of current template file
 
 add_filter( 'template_include', 'var_template_include', 1000 );

@@ -16,6 +16,7 @@ acf_form_head();
 get_header(); ?>
 
 <?php 
+// form machine
 $options = array(
     'post_id' => 'new', // post id to get field groups from and save data to
     'field_groups' => array(70), // this will find the field groups for this post (post ID's of the acf post objects)

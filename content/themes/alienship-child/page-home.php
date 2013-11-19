@@ -47,6 +47,9 @@ get_header(); ?>
 					} // if (of_get_option('alienship_featured_posts') )
 					*/
 					
+					// custom title
+					echo "<h3>Latest Reporters' Registry Requests</h3><a class='btn btn-info btn-xs' href='/reporters-registry/'>See all</a> <a class='btn btn-info btn-xs' href='/registry-request/'>Make a request</a>";
+
 					// Set arguments for the Loop - requests
 
 					$args = array(
