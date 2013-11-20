@@ -38,7 +38,11 @@
 				<?php if ( of_get_option('alienship_custom_footer_toggle') ) {
 					echo '' . of_get_option('alienship_custom_footer_text') . '';
 				} else {
-					echo '&copy; ' . date('Y') . ' ' . get_bloginfo('name'); } ?>
+					// add profile link
+				    $current_user = wp_get_current_user();
+				    echo '<a href="/members/' . $current_user->user_login . '/profile/edit/"> My Account</a>';
+					echo ' | &copy; ' . date('Y') . ' ' . get_bloginfo('name'); } 
+					?>
 
 				<?php 
 				// If the current user can manage options(ie. an admin)

@@ -11,6 +11,11 @@
  * @since Alien Ship 0.1
  */
 
+/** if ( !is_user_logged_in() ) {
+    wp_redirect( home_url('/register/') );
+    exit;
+} */
+
 acf_form_head(); 
  
 get_header(); ?>
@@ -48,7 +53,14 @@ $options = array(
 
 				get_template_part( '/templates/parts/content', 'page' );
 
-				acf_form( $options );
+				if ( is_user_logged_in() ) {
+					acf_form( $options );
+				}
+					else /* if ( !is_user_logged_in() ) */ {
+						echo '<div class="alert alert-warning"><h4>You must be logged in to make a request</h4></div>';
+						wp_login_form();
+						echo '<p>No account? <a href="/register" class="btn btn-primary">Register</a></p>';
+					}
 
 				do_action( 'alienship_loop_after' );
 

@@ -53,7 +53,7 @@ get_header(); ?>
 					// Set arguments for the Loop - requests
 
 					$args = array(
-						'posts_per_page' => 3,
+						'posts_per_page' => 2,
 						'post_type' => 'request'
 					);
 					query_posts($args);
@@ -74,7 +74,7 @@ get_header(); ?>
 					do_action( 'alienship_loop_after' );
 				endwhile;
 
-				alienship_content_nav( 'nav-below' ); // display content nav below posts?
+				// hide nav alienship_content_nav( 'nav-below' ); // display content nav below posts?
 
 			} else {
 
